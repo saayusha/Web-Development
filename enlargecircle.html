@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover to Enlarge Circle</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: burlywood; /* Beige background */
+        }
+
+        .circle {
+            width: 100px; /* Initial width of the circle */
+            height: 100px; /* Initial height of the circle */
+            background-color: pink; /* Initial circle color */
+            border-radius: 50%; /* Makes it a circle */
+            transition: transform 0.3s ease-in-out; /* Smooth transition */
+            cursor: pointer; /* Pointer on hover */
+        }
+
+        .circle:hover {
+            transform: scale(3.5); /* Enlarges the circle by 1.5x */
+        }
+    </style>
+</head>
+<body>
+    <div class="circle"></div>
+    <script>
+        // Corrected the typo in `querySelector`
+        const circle = document.querySelector('.circle');
+
+        // Add hover event listeners
+        circle.addEventListener('mouseenter', () => {
+            console.log('Circle hovered!');
+        });
+
+        circle.addEventListener('mouseleave', () => {
+            console.log('Hover ended!');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!-- IMPORTANT -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-mail Validation</title>
+    
+</head>
+<body>
+    <script type="text/javascript"> 
+        function clickMe()
+        {
+            var inputText=document.getElementById("email").value;
+            var mailformat=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            if(inputText.match(mailformat))
+        {
+            alert('valid email address');
+            return true;
+        }
+        else
+        {
+            alert('Invalid email address');
+            return false;       
+        }
+    }
+    </script>
+    <form>
+    <input type="text" id="textBox1" name="firstname" placeholder="firstname" />
+    <br>
+    <input type="text" id="textBox2" name="lastname" placeholder="lastname"/>
+    <br>
+    <input type="text" id="email" name="email" placeholder="email"/>
+    <br>
+    <input type="password" id="textBox3" name="password" placeholder="password"/>
+    <button id="btn" onclick="clickMe()">Login</button>
+    <span id="result"></span>
+</form>
+</body>
+</html>

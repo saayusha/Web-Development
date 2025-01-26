@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odd and Even child Example</title>
+    <style>
+        th,td{
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        tr:nth-child(even){
+            background-color: pink;
+            color: blue;
+        }
+
+        tr:nth-child(odd):not(:first-child)
+        {
+
+
+            background-color:aqua;
+            color:green;
+        }
+        
+    </style>
+</head>
+<body>
+   <table table border="solid black">
+    <tr>
+        <th>ID</th>
+        <th colspan="2">
+            Full Name
+        </th>
+        <th>Address</th>
+    </tr>
+    <tr><td>1</td><td>Aayusha <td> Sharma</td><td>Kathmandu</td></tr>
+    <tr><td>2</td><td>Ram <td> Subedi</td><td>Pokhara</td></tr>
+    <tr><td>3</td><td>Shyam <td> Poudel</td><td>Baglung</td></tr>
+    <tr><td>4</td><td>Sita <td> Pokhrel</td><td>Butwal</td></tr>
+    <tr><td>5</td><td>Rita <td> Thapa</td><td>Chitwan</td></tr>
+   </table>
+</body>
+</html>

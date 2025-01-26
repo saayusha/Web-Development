@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Change</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            margin: 10px;
+            cursor: pointer;
+        }
+        .red {
+            background-color: red;
+        }
+        .pink {
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+   <div class="box red" onclick="swapColor(this)"></div>
+   <div class="box pink" onclick="swapColor(this)"></div>
+
+<script>
+    function swapColor(element) {
+        if (element.classList.contains('red')) {
+            element.classList.remove('red');
+            element.classList.add('pink');
+        } else {
+            element.classList.remove('pink');
+            element.classList.add('red');
+        }
+    }
+</script>
+</body>
+</html>

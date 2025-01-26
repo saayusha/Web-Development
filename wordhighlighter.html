@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Word Highlighter</title>
+  <style>
+    body {
+      font-family: Arial, 'Times New Roman', Times, serif;
+      margin: 20px;
+    }
+
+    .highlight {
+      background-color: pink;
+    }
+    
+  </style>
+</head>
+<body>
+  <h1>Word Highlighter</h1>
+  <input type="text" id="searchInput"placeholder="Search for a word">
+  <button onclick="highlightWord()">Search</button>
+  <p id="textParagraph">
+   Lorem ipsum dolor sit minima amet consectetur minima adipisicing elit. Quas deserunt placeat consequuntur laudantium sapiente, minima perspiciatis. Officia, reiciendis amet! Blanditiis dolores quisquam iusto reiciendis reprehenderit molestias odit itaque exercitationem recusandae!
+  </p>
+  
+
+  <script>
+    function highlightWord() {
+      const searchWord = document.getElementById("searchInput").value.trim();
+      const paragraph = document.getElementById("textParagraph");
+
+      if (!searchWord) return alert("Please enter a word to search.");
+
+      const text = paragraph.textContent;
+     //global case insensitive
+    const regex = new RegExp(`(${searchWord})`,"gi");
+      paragraph.innerHTML = text.replace(regex, `<span class="highlight">$1</span>`);
+    }
+  </script>
+</body>
+</html>

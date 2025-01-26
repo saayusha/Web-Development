@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+    <script>
+        function clickMe()
+        {
+            var txt1 = document.getElementById("textBox1").value;
+            var txt2 = document.getElementById("textBox2").value;
+            result=txt1+ " "+txt2;
+            document.getElementById("result").innerText=result;
+            event.preventDefault();
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <input type="text" id="textBox1" name="firstname"/>
+        <br>
+        <input type="text" id="textBox2" name="lastname"/>
+        <br>
+        <button id="btn" onclick="clickMe()">Submit</button>
+        <span id = "result"></span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </form>
+    
+</body>
+</html>
