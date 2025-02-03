@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Image Slider</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #ffe4e1;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .slider-container {
+            position: relative;
+            width: 80%;
+            max-width: 600px;
+            margin:  50px auto;
+            overflow: hidden;
+            border-radius: 15px;
+            /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); */
+            background-color: #ffe4e1;
+            padding: 10px;
+        }
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
+            position: relative;
+        }
+        img {
+            width: 100%;
+            display: block;
+            border-radius: 10px;
+            height: 100%;
+            object-fit: center;
+            object-fit: contain;
+        }
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 192, 203, 0.8);
+            color: white;
+            border: none;
+            padding: 12px;
+            cursor: pointer;
+            font-size: 20px;
+            border-radius: 50%;
+            transition: 0.3s;
+        }
+        .prev:hover, .next:hover {
+            background-color: rgba(255, 105, 180, 0.9);
+        }
+        .prev { left: 10px; }
+        .next { right: 10px; }
+    </style>
+</head>
+<body>
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slide"><img src="slide4.jpg" alt="Slide 1"></div>
+            <div class="slide"><img src="slide6.jpg" alt="Slide 2"></div>
+            <div class="slide"><img src="slide4.jpg" alt="Slide 3"></div>
+        </div>
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+    </div>
+    
+    <script>
+        $(document).ready(function(){
+            let currentIndex = 0;
+            const slides = $('.slide');
+            const totalSlides = slides.length;
+
+            function moveSlider(index) {
+                if (index >= totalSlides) currentIndex = 0;
+                else if (index < 0) currentIndex = totalSlides - 1;
+                else currentIndex = index;
+                $('.slider').css('transform', `translateX(-${currentIndex * 100}%)`);
+            }
+
+            $('.next').click(() => moveSlider(currentIndex + 1));
+            $('.prev').click(() => moveSlider(currentIndex - 1));
+
+            // setInterval(() => moveSlider(currentIndex + 1), 3000);
+        });
+    </script>
+</body>
+</html>
